@@ -6,10 +6,10 @@ class Gigasecond {
 
     val date: LocalDateTime
 
-    constructor(localDate: LocalDate) : this(LocalDateTime.of(localDate, LocalTime.now()))
+    constructor(birthDate: LocalDate) : this(LocalDateTime.of(birthDate, LocalTime.MIDNIGHT))
 
-    constructor(localDateTime: LocalDateTime) {
-        this.date = localDateTime
+    constructor(birthDateTime: LocalDateTime) {
+        this.date = birthDateTime.plusSeconds(1_000_000_000)
     }
 
 }
