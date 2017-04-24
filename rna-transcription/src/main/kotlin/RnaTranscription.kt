@@ -1,7 +1,7 @@
 fun transcribeToRna(dna: String): String {
     val rnaBuilder: StringBuilder = StringBuilder()
 
-    for (letter: Char in dna) {
+    for (letter in dna) {
         when (letter) {
             'G' -> rnaBuilder.append('C')
             'C' -> rnaBuilder.append('G')
