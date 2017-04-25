@@ -1,15 +1,16 @@
 fun transcribeToRna(dna: String): String {
-    val rnaBuilder: StringBuilder = StringBuilder()
 
-    for (letter in dna) {
-        when (letter) {
-            'G' -> rnaBuilder.append('C')
-            'C' -> rnaBuilder.append('G')
-            'T' -> rnaBuilder.append('A')
-            'A' -> rnaBuilder.append('U')
-            else -> throw IllegalArgumentException("Illegal DNA string.")
-        }
+    val rna = dna.map(::transcribeNucleotide).joinToString(separator = "")
+
+    return rna
+}
+
+fun transcribeNucleotide(letter: Char): Char {
+    return when (letter) {
+        'G' -> 'C'
+        'C' -> 'G'
+        'T' -> 'A'
+        'A' -> 'U'
+        else -> throw IllegalArgumentException("Illegal DNA nucleotide.")
     }
-
-    return rnaBuilder.toString()
 }
