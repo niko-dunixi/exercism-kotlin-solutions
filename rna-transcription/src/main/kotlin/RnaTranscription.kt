@@ -5,8 +5,8 @@ fun transcribeToRna(dna: String): String {
     return rna
 }
 
-fun transcribeNucleotide(letter: Char): Char {
-    return when (letter) {
+fun transcribeNucleotide(nucleotide: Char): Char {
+    return when (nucleotide) {
         'G' -> 'C'
         'C' -> 'G'
         'T' -> 'A'
